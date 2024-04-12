@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import './styles/index.css'
+import Board from './components/board';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+class MyGame extends Component {
+  
+  render() {
+    return <Board boardSize={9} />
+  }
+}
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+ReactDOM.render(
+  <MyGame/>,
+  document.getElementById('root')
+);
